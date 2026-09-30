@@ -11,7 +11,7 @@ router.get('/movies', async function(req, res, next) {
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
-    res.json(data);
+    res.json({movies:data.results});
   } catch (error) {
     next(error);
   }
